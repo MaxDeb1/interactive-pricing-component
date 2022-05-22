@@ -1,0 +1,148 @@
+.toggle-switch {
+  background: $Toggle_Bg;
+  width: 42.5px;
+  height: 22.5px;
+  overflow: hidden;
+  border-radius: 45px;
+  display: inline-block;
+  vertical-align: middle;//
+  margin: 0 10px;
+
+  &::after {
+    content: " ";
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: calc((22.5px - 15px) / 2);
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .active & {
+    background: $Slider_Bg;
+    
+    &::after {
+      margin-left: auto;
+    }
+  }
+}
+
+
+.discount {
+  height: 20px;
+  max-width: 80px; ///
+  background-color: $Discount_Bg;
+  color: $Discount_Text;
+  border-radius: 45px;
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.discount__mobile {
+  width: 40px;
+  margin-left: 6px;
+}
+
+.discount__desktop {
+  display: none;
+  margin-left: 10px;
+}
+
+///input[type=range]///
+
+/*==============================*/
+/* partie commune               */
+/*==============================*/
+/* la zone de déplacement */
+input[type=range].slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  margin-top: 47px;
+  background: $Toggle_Bg;
+  outline: none;
+  opacity: .8;
+  transition: opacity .2s;
+  border-radius: 12px;
+}
+
+/* le curseur */
+input[type=range].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  background: $Slider_Bg;
+  background-image: url(/images/icon-slider.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: 0px 15px 30px 5px hsla(174, 86%, 45%, 0.8);
+  cursor: pointer;
+}
+
+/*==============================*/
+/* Firefox                      */
+/*==============================*/
+
+/* le curseur */
+input[type=range].slider::-moz-range-thumb {
+  width: 40px;
+  height: 40px;
+  background: $Slider_Bg;
+  background-image: url(../images/icon-slider.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: 0px 15px 30px 5px hsla(174, 86%, 45%, 0.8);
+  cursor: pointer;
+}
+///
+
+button {
+  font-size: 1em;
+  height: 42px;
+  width: 170px;
+  margin: 0 auto;
+  padding: auto;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  display: block;
+
+  &:hover {
+    outline: none;
+  }
+}
+
+button {
+    background: $Text-CTA_Bg;
+    color: $CTA_Text;
+
+    &:hover {
+        color : white;
+      }
+}
+
+
+
+@media (min-width: 690px) {
+  .discount__mobile {
+    display: none;
+  }
+  
+  .discount__desktop {
+    display: block;
+    line-height: 20px;
+    width: 80px;
+  }
+
+  .card__bottom button {
+    margin-right: 0;
+  }
+
+}

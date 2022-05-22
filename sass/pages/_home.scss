@@ -1,0 +1,23 @@
+body {
+    height: 100vh;
+    background: url(../images/bg-pattern.svg) no-repeat;
+    font-family: $manrope;
+    text-align: center;
+    padding: 0 6%;
+    position: relative;
+}
+
+.pattern {
+    background: url(../images/pattern-circles.svg) no-repeat center 55px;
+    padding-bottom: 87.5px;
+}
+
+@media (min-width: 690px) {
+    body {
+        padding: 0;
+    }
+
+    .pattern {
+        padding-bottom: 137px;
+    }
+}

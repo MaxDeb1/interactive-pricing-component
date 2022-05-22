@@ -1,0 +1,32 @@
+header {
+    padding: 90px 22.5px 85px;
+    text-align: center;
+  
+    h1 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+      letter-spacing: 0.01rem;
+      color: $Text;
+      width: 180px;
+      margin: 3px auto 0;
+    }
+  }
+
+  @media (min-width: 690px) {
+  header {
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      width: 100%;
+      padding-top: 0.7rem;
+    };
+  }
+  }

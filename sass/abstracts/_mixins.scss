@@ -1,0 +1,45 @@
+/// Event wrapper
+/// Mixin for applying hover and active states in one go
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+//How to use it : .my-element ( color: red; @include on-event ( color: blue; ) )
+// donnera : .my-element ( color: red; &:hover, &:active, &:focus ( color: blue; ) )
+// ou .my-element ( @include on-event($self: true) ( color: blue; ) )
+// qui donnera le css suivant : .my-element, .my-element:hover, .my-element:active, .my-element:focus ( color: blue )
+
+
+/// Event wrapper v2
+/// Mixin for applying hover and focus states
+@mixin hocus {
+  &:hover, &:focus {
+    @content;
+  }
+}
+//How to use it :     @include hocus { color:whatever;}
+
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+//How to use it : 
+//exemple - pour styliser un élément en fonction du parent qu'il a : .my-element ( display: flex; @include when-inside('.no-flexbox') ( display: table; ) )
+//donnera : .my-element ( display: flex; .no-flexbox & ( display: table; ) )
