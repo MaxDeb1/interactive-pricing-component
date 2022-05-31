@@ -1,5 +1,7 @@
 # Frontend Mentor - Interactive pricing component
 
+[Live site](https://maxdeb1.github.io/interactive-pricing-component/)
+
 ![Design preview for the Interactive pricing component coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
